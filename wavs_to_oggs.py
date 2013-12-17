@@ -1,8 +1,8 @@
 import glob, subprocess, os
 ffmpeg = os.environ.get("FFMPEG", "ffmpeg")
 
-for wav in glob.glob("*.wav"):
-	ogg = os.path.splitext(wav)[0] + ".ogg"
+for wav in glob.glob("WAV/*.wav"):
+	ogg = "OGG/" + os.path.basename(os.path.splitext(wav)[0] + ".ogg")
 	if os.path.exists(ogg):
 		continue
 	command = [
